@@ -21,6 +21,7 @@ import org.apache.http.client.config.RequestConfig;
 import org.apache.http.conn.ssl.*;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.jboss.logging.Logger;
 
 import javax.net.ssl.*;
 import java.io.IOException;
@@ -36,6 +37,7 @@ import java.util.concurrent.TimeUnit;
  * @version $Revision: 1 $
  */
 public class HttpClientBuilder {
+    private static final Logger logger = Logger.getLogger(HttpClientBuilder.class);
     public static enum HostnameVerificationPolicy {
         /**
          * Hostname verification is not done on the server's certificate

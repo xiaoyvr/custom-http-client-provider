@@ -30,8 +30,13 @@ public class CustomHttpClientFactory implements HttpClientFactory {
     private volatile CloseableHttpClient httpClient;
     private Config.Scope config;
 
+    public CustomHttpClientFactory() {
+        logger.info("creating CustomHttpClientFactory");
+    }
+
     @Override
     public HttpClientProvider create(KeycloakSession session) {
+        logger.info("creating custom HttpClientProvider");
         lazyInit(session);
 
         return new HttpClientProvider() {
