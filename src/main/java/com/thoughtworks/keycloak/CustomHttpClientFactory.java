@@ -17,13 +17,16 @@ import org.keycloak.connections.httpclient.HttpClientProvider;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.KeycloakSessionFactory;
 import org.keycloak.truststore.TruststoreProvider;
+import org.keycloak.provider.ServerInfoAwareProviderFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyStore;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class CustomHttpClientFactory implements HttpClientFactory {
+public class CustomHttpClientFactory implements HttpClientFactory, ServerInfoAwareProviderFactory {
 
     private static final Logger logger = Logger.getLogger(CustomHttpClientFactory.class);
 
@@ -167,4 +170,11 @@ public class CustomHttpClientFactory implements HttpClientFactory {
 
     }
 
+    @Override
+    public Map<String, String> getOperationalInfo() {
+        Map<String, String> ret = new LinkedHashMap<>();
+        httpClient.
+        ret.put("version", "1.0");
+        return ret;
+    }
 }
