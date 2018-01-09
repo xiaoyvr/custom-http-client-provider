@@ -173,7 +173,6 @@ public class CustomHttpClientFactory implements HttpClientFactory, ServerInfoAwa
     @Override
     public Map<String, String> getOperationalInfo() {
         Map<String, String> ret = new LinkedHashMap<>();
-        httpClient.
         ret.put("version", "1.0");
         return ret;
     }

@@ -10,7 +10,7 @@
 
     <properties>
         <!-- Sane default when no revision property is passed in from the commandline -->
-        <revision>1-SNAPSHOT</revision>
+        <revision>1.0.2-SNAPSHOT</revision>
     </properties>
 
     <build>
